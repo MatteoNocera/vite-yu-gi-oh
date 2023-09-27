@@ -18,11 +18,13 @@ export default {
 </script>
 
 <template>
-    <div class="card">
-        <img class="card-img-top" :src="path" alt="Title">
-        <div class="card-body">
-            <h4 class="card-title">{{ name }}</h4>
-            <p class="card-text">{{ archetype }}</p>
+    <div class="col">
+        <div class="card h-100 p-0">
+            <img class="" :src="path" alt="Title">
+            <div class="card-body text-center">
+                <h6 class="card-title text-white text-uppercase">{{ name }}</h6>
+                <p class="card-text">{{ archetype }}</p>
+            </div>
         </div>
     </div>
 </template>
