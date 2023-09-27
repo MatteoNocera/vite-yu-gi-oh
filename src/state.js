@@ -9,9 +9,8 @@ export const state = reactive({
     name: null,
     archetypes_name: null,
     archetype_name: null,
-    Myparams: {
-        num: 20,
-        offset: 0
+    myParams: {
+
     },
 
     fetchData() {
@@ -20,12 +19,16 @@ export const state = reactive({
 
         axios
             .get(this.base_url, {
+
                 params: {
-                    state.Myparams
+                    archetype: this.archetype_name,
+                    num: 20,
+                    offset: 0
                 }
+
             })
             .then(response => {
-                //console.log(response);
+                console.log(response);
                 this.cards = response.data.data;
                 //console.log(this.cards[0].card_images[0].image_url);
             })
