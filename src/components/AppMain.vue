@@ -1,10 +1,20 @@
 <script>
 import AppContents from './AppContents.vue';
+import { state } from '../state.js'
 
 export default {
     name: 'AppMain',
+    emits: ['archetypeSelect'],
+    data() {
+        return {
+            state
+        }
+    },
     components: {
         AppContents
+    },
+    created() {
+        state.fetchArchetype()
     }
 }
 </script>
@@ -14,11 +24,12 @@ export default {
         <div class="container">
 
             <div class="py-4 col-3">
-                <select id="archetype" class="form-select" aria-label="Default select example">
-                    <option selected>Searc Archetype</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
+                <select id="archetype" @change="$emit('archetypeSelect')" v-model="state.archetype_name"
+                    class="form-select">
+                    <option placeholder="Searc Archetype" disabled>Searc Archetype</option>
+                    <option v-for="archetype_name in state.archetypes_name" :value="archetype_name.archetype_name">{{
+                        archetype_name.archetype_name }}</option>
+
                 </select>
 
             </div>
