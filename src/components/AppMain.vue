@@ -1,6 +1,7 @@
 <script>
 import AppContents from './AppContents.vue';
 import { state } from '../state.js'
+import AppSelect from './AppSelect.vue';
 
 export default {
     name: 'AppMain',
@@ -10,7 +11,8 @@ export default {
         }
     },
     components: {
-        AppContents
+        AppContents,
+        AppSelect
     },
     created() {
         state.fetchArchetype();
@@ -30,14 +32,14 @@ export default {
         <div class="container">
 
             <div class="py-4 col-3">
-                <select id="archetype" @change="state.fetchData" v-model="state.archetype_name" class="form-select">
+                <!-- <select id="archetype" @change="state.fetchData" v-model="state.archetype_name" class="form-select">
                     <option value="" disabled>Searc Archetype</option>
                     <option v-for="archetype_name in state.archetypes_name" :value="archetype_name.archetype_name">
                         {{ archetype_name.archetype_name }}
                     </option>
 
-                </select>
-                <!-- AppSelect -->
+                </select> -->
+                <AppSelect></AppSelect>
 
             </div>
 
