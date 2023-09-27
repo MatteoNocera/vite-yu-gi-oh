@@ -16,13 +16,13 @@ export default {
     created() {
         state.fetchArchetype();
 
-    },
+    }/* ,
     methods: {
         filteredArchetype() {
             const selectedArchetypeUrl = this.state.base_url + `&archetype=${this.state.archetype_name}`;
             console.log(selectedArchetypeUrl);
-        }
-    }
+        } 
+    } */
 }
 </script>
 
