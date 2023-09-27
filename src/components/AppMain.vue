@@ -4,7 +4,6 @@ import { state } from '../state.js'
 
 export default {
     name: 'AppMain',
-    emits: ['archetypeSelect'],
     data() {
         return {
             state
@@ -32,7 +31,7 @@ export default {
 
             <div class="py-4 col-3">
                 <select id="archetype" @change="state.fetchData" v-model="state.archetype_name" class="form-select">
-                    <option selected>Searc Archetype</option>
+                    <option value="" disabled>Searc Archetype</option>
                     <option v-for="archetype_name in state.archetypes_name" :value="archetype_name.archetype_name">
                         {{ archetype_name.archetype_name }}
                     </option>

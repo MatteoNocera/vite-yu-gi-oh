@@ -17,7 +17,7 @@ export default {
 
         setTimeout(() => {
             state.fetchData();
-        })
+        }, 2000)
         //console.log(state);
         //setTimeout(state.fetchData, 2000); //non funziona
         //state.fetchData()

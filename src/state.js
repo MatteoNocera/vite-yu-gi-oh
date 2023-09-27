@@ -9,9 +9,7 @@ export const state = reactive({
     name: null,
     archetypes_name: null,
     archetype_name: null,
-    myParams: {
 
-    },
 
     fetchData() {
 
